@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+    <!--<script src="request.js"></script>-->
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <p1>
+        <h1>Bem Vindo!</h1>
+    </p1>
+    <script>
+        function validacao() {
+            var login = document.getElementById("login").value
+            var senha = document.getElementById("senha").value
+            var form = document.getElementById("form");
+
+
+            //função para checar se formulario está em branco
+            //return false não permite enviar formulario caso o usuario nao cumpra as especificacoes
+            if (login == "" || senha == "") {
+                alert("Preencha os campos ")
+                return false
+
+            }
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("enviar").innerHTML =
+                this.responseText;
+
+                };
+                xhttp.open("POST", " http://52.91.139.190/fsapi/users/login", true);
+                xhttp.send();
+            }
+        }
+    </script>
+
+    <p2>
+        <form id="form" method="POST">
+
+            <input id="login" type="email" placeholder="seu e-mail"><br><br>
+            <input id="senha" type="password" placeholder="sua sua senha"><br>
+
+            <input id="enviar" onclick="validacao()" type="submit" value="Login">
+            <!---- <input id="enviar" onclick="validacao()" type="submit"-->
+
+
+    </p2>
+
+    <!--Aqui nesta div começa a atividade 4/XMLHttpRequest -->
+
+
+
+
+
+</body>
+
+</html>

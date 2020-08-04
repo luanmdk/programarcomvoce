@@ -1,0 +1,22 @@
+body {
+    background-image: url(Imagens_css/background.jpg);
+
+}
+
+p1 { text-align: center;
+     margin left: 0 auto;
+     line height: 5px;
+}
+
+p2 { text-align: center;
+    margin left: 0 auto;
+    white-space: nowrap;
+
+    }
+    
+    input[type=submit]{
+
+        background:#0392f8;
+        color:#ffffff; 
+    }
+}
