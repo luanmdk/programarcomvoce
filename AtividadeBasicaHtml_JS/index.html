@@ -35,10 +35,15 @@
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("enviar").innerHTML =
                 this.responseText;
-
+            //estudar Json.stringfy
                 };
                 xhttp.open("POST", " http://52.91.139.190/fsapi/users/login", true);
-                xhttp.send();
+                xhttp.send(
+                    {
+                "email": login,
+                "password": senha,
+                                }
+                );
             }
         }
     </script>
